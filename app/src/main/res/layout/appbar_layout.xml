@@ -12,7 +12,7 @@
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/my_toolbar"
-            android:background="@color/toolbarcolor"
+            android:background="@color/toolbar_color"
             app:titleTextColor="@android:color/white"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">

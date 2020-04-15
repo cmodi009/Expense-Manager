@@ -4,7 +4,7 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
 
-    <color name="toolbarcolor">#FFAEF509</color>
+    <color name="toolbar_color">#FFAEF509</color>
 
     <color name="nav_header">#FFEAA00C</color>
 </resources>
