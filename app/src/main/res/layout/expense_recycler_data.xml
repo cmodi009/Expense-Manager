@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardElevation="5dp"
@@ -21,11 +20,11 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="14 Sept 2019"
+                android:text="14 sEPT 2019"
                 android:layout_margin="5dp"
                 android:textAppearance="?android:textAppearanceSmall"
                 android:textStyle="bold"
-                android:id="@+id/date_txt_income"
+                android:id="@+id/date_txt_expense"
                 android:textColor="@color/date_color"
                 />
 
@@ -42,7 +41,7 @@
                 android:maxLines="1"
                 android:textAppearance="?android:textAppearanceSmall"
                 android:textStyle="bold"
-                android:id="@+id/type_txt_income"
+                android:id="@+id/type_txt_expense"
                 android:textColor="@android:color/black"
                 />
             <TextView
@@ -53,8 +52,8 @@
                 android:textAppearance="?android:textAppearanceSmall"
                 android:textStyle="bold"
                 android:textColor="@android:color/black"
-                android:layout_below="@+id/type_txt_income"
-                android:id="@+id/note_txt_income"
+                android:layout_below="@+id/type_txt_expense"
+                android:id="@+id/note_txt_expense"
                 />
 
         </RelativeLayout>
@@ -66,11 +65,11 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="600000"
+                android:text="amount"
                 android:textAppearance="?android:textAppearanceSmall"
                 android:textStyle="bold"
-                android:id="@+id/amount_txt_income"
-                android:textColor="@color/date_color"
+                android:id="@+id/amount_txt_expense"
+                android:textColor="@color/expense_ammount_color"
                 />
 
         </RelativeLayout>

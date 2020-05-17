@@ -16,8 +16,11 @@ import com.example.expensemanager.Model.Data;
 import com.google.firebase.auth.FirebaseAuth;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.net.MulticastSocket;
 
@@ -30,6 +33,7 @@ public class IncomeFragment extends Fragment {
     private FirebaseAuth mAuth;
     private RecyclerView recyclerView;
     private DatabaseReference mIncomeDatabase;
+    private TextView incomeSum;
 
 
     @Override
@@ -44,6 +48,8 @@ public class IncomeFragment extends Fragment {
 
         mIncomeDatabase = FirebaseDatabase.getInstance().getReference().child("IncomeData").child(uid);
 
+        incomeSum = myview.findViewById(R.id.income_txt_result);
+
         recyclerView=myview.findViewById(R.id.recycler_id_income);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
         layoutManager.setReverseLayout(true);
@@ -51,7 +57,26 @@ public class IncomeFragment extends Fragment {
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(layoutManager);
 
+        mIncomeDatabase.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                int totalvalue = 0;
 
+                for(DataSnapshot mysnapshot:dataSnapshot.getChildren())
+                {
+                    Data data = mysnapshot.getValue(Data.class);
+                    totalvalue+=data.getAmount();
+                    String sttotal = String.valueOf(totalvalue);
+
+                    incomeSum.setText(sttotal+ ".00");
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
 
 
         return myview;
@@ -73,7 +98,7 @@ public class IncomeFragment extends Fragment {
                 viewHolder.setType(model.getType());
                 viewHolder.setNote(model.getNote());
                 viewHolder.setDate(model.getDate());
-                viewHolder.setAmmount(model.getAmount());
+                viewHolder.setAmount(model.getAmount());
 
             }
         };
@@ -107,12 +132,11 @@ public class IncomeFragment extends Fragment {
             mDate.setText(date);
         }
 
-        private void setAmmount(int amount){
+        private void setAmount(int amount){
 
-            TextView mAmount=mView.findViewById(R.id.ammount_txt_income);
+            TextView mAmount=mView.findViewById(R.id.amount_txt_income);
             String stamount=String.valueOf(amount);
             mAmount.setText(stamount);
-
         }
     }
 }
