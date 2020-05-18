@@ -20,7 +20,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="14 sEPT 2019"
+                android:text="14 Sept 2019"
                 android:layout_margin="5dp"
                 android:textAppearance="?android:textAppearanceSmall"
                 android:textStyle="bold"
@@ -65,7 +65,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="amount"
+                android:text="Amount"
                 android:textAppearance="?android:textAppearanceSmall"
                 android:textStyle="bold"
                 android:id="@+id/amount_txt_expense"
