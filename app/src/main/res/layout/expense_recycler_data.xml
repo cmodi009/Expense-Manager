@@ -69,7 +69,7 @@
                 android:textAppearance="?android:textAppearanceSmall"
                 android:textStyle="bold"
                 android:id="@+id/amount_txt_expense"
-                android:textColor="@color/expense_ammount_color"
+                android:textColor="@color/expense_amount_color"
                 />
 
         </RelativeLayout>

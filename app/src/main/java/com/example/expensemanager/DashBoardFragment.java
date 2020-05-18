@@ -175,7 +175,7 @@ public class DashBoardFragment extends Fragment {
         layoutManagerExpense.setReverseLayout(true);
         layoutManagerExpense.setStackFromEnd(true);
         ExpenseRecycler.setHasFixedSize(true);
-        ExpenseRecycler.setLayoutManager(layoutManagerIncome);
+        ExpenseRecycler.setLayoutManager(layoutManagerExpense);
 
         return myview;
     }
@@ -387,7 +387,7 @@ public class DashBoardFragment extends Fragment {
         FirebaseRecyclerAdapter<Data,ExpenseViewHolder>expenseAdapter=new FirebaseRecyclerAdapter<Data, ExpenseViewHolder>
                 (
                         Data.class,
-                        R.layout.dashboart_expense,
+                        R.layout.dashboard_expense,
                         DashBoardFragment.ExpenseViewHolder.class,
                         mExpenseDatabase
                 ) {
